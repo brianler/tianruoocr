@@ -1112,7 +1112,7 @@ namespace TrOCR
 				}
                 var data = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=",
                     HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
-                var html = CommonHelper.PostStrData("https://translate.google.cn/translate_a/single", data);
+                var html = CommonHelper.PostStrData("https://translate.googleapis.com/translate_a/single", data);
 
 				var jArray = (JArray)JsonConvert.DeserializeObject(html);
 				var count = ((JArray)jArray[0]).Count;
@@ -3977,7 +3977,7 @@ namespace TrOCR
 					}
 				}
 				var postData = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=", HttpUtility.UrlEncode(text).Replace("+", "%20"));
-				var jArray = (JArray)JsonConvert.DeserializeObject(CommonHelper.PostStrData("https://translate.google.cn/translate_a/single", postData));
+				var jArray = (JArray)JsonConvert.DeserializeObject(CommonHelper.PostStrData("https://translate.googleapis.com/translate_a/single", postData));
 				var count = ((JArray)jArray[0]).Count;
 				for (var i = 0; i < count; i++)
 				{
